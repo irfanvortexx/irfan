@@ -40,18 +40,25 @@
         }
         
         .love-text {
-            font-size: 2em;
-            /* smaller than normal text */
+            font-size: 0.9em;
+            /* keep same size */
             font-weight: 600;
-            /* keeps it readable */
-            padding: 15px;
+            /* readable */
+            padding: 10px;
+            /* reduced from 30px → tighter spacing */
+            margin: 5px 0;
+            /* small gap instead of large space */
+            text-align: center;
+            /* keeps it centered */
         }
         
         button {
             font-size: clamp(1em, 2vw, 1.3em);
-            /* auto scales between mobile & desktop */
-            padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
-            margin: clamp(10px, 2vw, 15px);
+            /* keep same size */
+            padding: 8px 18px;
+            /* reduced padding */
+            margin: 6px;
+            /* smaller gap between buttons */
             border: none;
             border-radius: 12px;
             cursor: pointer;
@@ -113,9 +120,11 @@
         }
         
         video {
-            margin-top: 20px;
+            margin: 8px auto;
+            /* reduced top/bottom space, keeps it centered */
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+            /* smaller shadow */
             width: 100%;
             max-width: 800px;
             aspect-ratio: 16/9;
@@ -233,4 +242,3 @@
 </body>
 
 </html>
-
