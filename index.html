@@ -40,37 +40,67 @@
         }
         
         button {
-            font-size: 1.3em;
-            padding: 15px 30px;
-            margin: 15px;
+            font-size: clamp(1em, 2vw, 1.3em);
+            /* auto scales between mobile & desktop */
+            padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
+            margin: clamp(10px, 2vw, 15px);
             border: none;
             border-radius: 12px;
-            /* ✅ squarer look to match Oswald */
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 700;
             text-transform: uppercase;
         }
+        /* Extra fine-tuning for smaller devices */
+        
+        @media (max-width: 600px) {
+            /* Mobile */
+            button {
+                width: 100%;
+                /* Full width button */
+                font-size: 1em;
+                padding: 12px 20px;
+                margin: 8px 0;
+            }
+        }
+        
+        @media (min-width: 601px) and (max-width: 1024px) {
+            /* Tablet */
+            button {
+                font-size: 1.1em;
+                padding: 14px 24px;
+                margin: 12px;
+            }
+        }
+        
+        @media (min-width: 1025px) {
+            /* Laptop / Desktop */
+            button {
+                font-size: 1.3em;
+                padding: 15px 30px;
+                margin: 15px;
+            }
+        }
         
         button:first-of-type {
-            background: #ff69b4;
+            background: #69ffb4;
             color: rgb(0, 0, 0);
             box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
         }
         
         button:first-of-type:hover {
-            background: #ff85c1;
+            background: #69ffb4;
             transform: scale(1.1);
         }
         
         button:last-of-type {
-            background: #f44336;
+            background: #ff4d4d;
             color: rgb(0, 0, 0);
             box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
         }
         
         button:last-of-type:hover {
-            background: #e53935;
+            background: #d62828;
             transform: scale(1.1);
         }
         
@@ -113,7 +143,7 @@
 </head>
 
 <body>
-    <h1>Will you be my lover 💖💫</h1>
+    <h2>Will you be my lover 💖💫</h2>
 
     <form>
         <button type="button" onclick="playVideo('yes')">
@@ -127,13 +157,13 @@
 
     <!-- YES response -->
     <div id="yes" style="display:none;">
-        <h2>Accept my love, and I'll be there on your wedding day just like this 💍</h2>
+        <h3>Accept my love, and I'll be there on your wedding day just like this 💍</h3>
         <video id="yesVideo" src="yes.mp4" controls></video>
     </div>
 
     <!-- NO response -->
     <div id="no" style="display:none;">
-        <h2>Even if you say no, I’ll still be there on your wedding day 🙏🏻</h2>
+        <h3>Even if you say no, I’ll still be there on your wedding day 🙏🏻</h3>
         <video id="noVideo" src="No.mp4" controls></video>
     </div>
 
@@ -193,6 +223,5 @@
         }
     </script>
 </body>
-
 
 </html>
