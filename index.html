@@ -39,6 +39,13 @@
             display: inline-block;
         }
         
+        .love-text {
+            font-size: 0.9em;
+            /* smaller than normal text */
+            font-weight: 600;
+            /* keeps it readable */
+        }
+        
         button {
             font-size: clamp(1em, 2vw, 1.3em);
             /* auto scales between mobile & desktop */
@@ -143,7 +150,7 @@
 </head>
 
 <body>
-    <h2>Will you be my lover 💖💫</h2>
+    <p class="love-text">Will you be my lover 💖💫</p>
 
     <form>
         <button type="button" onclick="playVideo('yes')">
